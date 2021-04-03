@@ -3,22 +3,18 @@ import './App.css';
 
 function App() {
   return (
-    <div className="container">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className="container">
+      <div className="row">
+        <div className="col">
+          <h2 className="mt-5">React Projeto GitHub</h2>
+          <form id="gitHubForm" className="form-inline m-auto">
+            <input id="usernameInput" className="form-control mb-5" type="text" name="username" placeholder="GitHub Username" />
+            <input type="submit" className="btn btn-primary ml-2 mb-5" value="Submit" />
+          </form>
+            <div className="main-content"></div>
+        </div>
+      </div>
+    </main>
   );
 }
 
