@@ -4,12 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
-import { BrowserRouter } from "react-router-dom";
+import { Router } from "react-router-dom";
+import { createBrowserHistory } from "history";
+
+const history = createBrowserHistory({forceRefresh:true});
 
 ReactDOM.render(
-  <BrowserRouter>
+  <Router history={history}>
     <App />
-  </BrowserRouter>,
+  </Router>,
   document.getElementById('root')
 );
 

@@ -1,6 +1,5 @@
 import React from 'react';
-import { Switch, Route, Link } from "react-router-dom";
-import { withRouter } from "react-router";
+import { Switch, Route, Link, withRouter } from "react-router-dom";
 import Repos from '../Repos/Repos';
 
 const style = {

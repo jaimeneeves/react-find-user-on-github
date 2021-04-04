@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from "react-router-dom";
 
 class Repos extends React.Component {
   constructor(props) {
@@ -49,4 +50,4 @@ Repos.propTypes = {};
 
 Repos.defaultProps = {};
 
-export default Repos;
+export default withRouter(Repos);
