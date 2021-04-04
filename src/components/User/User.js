@@ -1,5 +1,7 @@
 import React from 'react';
-// import { Link } from "react-router-dom";
+import { Switch, Route, Link } from "react-router-dom";
+import { withRouter } from "react-router";
+import Repos from '../Repos/Repos';
 
 const style = {
   img: {
@@ -39,10 +41,9 @@ class User extends React.Component {
         <div to={stat.url} className="text-decoration-none">
           <h2 className="mb-0">{stat.value}</h2>
           <div>{stat.name}</div>
-          <a href={stat.url}
-            className={['btn btn-block btn-sm text-decoration-none mt-2', `btn-${stat.btnType}`].join(' ')}>
+          <Link to={stat.url} className={['btn btn-block btn-sm text-decoration-none mt-2', `btn-${stat.btnType}`].join(' ')}>
             Visualizar
-          </a>
+          </Link>
         </div>
       </li>
     );
@@ -53,6 +54,8 @@ class User extends React.Component {
     if (!this.state.user) {
       return (<div className="user-page">LOADING...</div>);
     }
+
+    const { path } = this.props.match;
 
     // If we get to this part of `render`, then the user is loaded
     const user = this.state.user;
@@ -78,6 +81,7 @@ class User extends React.Component {
         url: `/user/${this.props.match.params.username}/following`
       }
     ];
+
 
     return (
       <div>
@@ -107,12 +111,16 @@ class User extends React.Component {
           </div>
         </div>
         <hr/>
-        {/* <div className="user-extra">
-                {this.props.children}
-              </div>  */}
+        <div className="user-extra">
+
+          <Switch>
+            <Route path={`${path}/repos`} component={Repos}/>
+          </Switch>
+        </div>
       </div>
     );
   }
 }
 
-export default User;
+export default withRouter(User);
+
