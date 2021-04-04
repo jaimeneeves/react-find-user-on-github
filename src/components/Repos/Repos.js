@@ -30,7 +30,7 @@ class Repos extends React.Component {
 
     return (
       <div className="followers-page mb-5">
-        <h3>{this.props.match.params.username} repositórios</h3>
+        <div className="mb-3">repositórios</div>
         <ul className="list-group">
         {
           this.state.repos.map(function(repo) {

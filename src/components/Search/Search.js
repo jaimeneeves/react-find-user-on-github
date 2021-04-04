@@ -32,7 +32,7 @@ class Search extends React.Component{
 
   render() {
     return (
-      <div>
+      <div className="text-center">
         <h2 className="mt-5 mb-4">Buscar usuário no GitHub</h2>
         <form onSubmit={this.handleSubmit} className="form-inline m-auto" style={style.form}>
           <input id="usernameInput" className="form-control mb-5" type="text"
