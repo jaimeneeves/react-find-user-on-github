@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, Route, Link, withRouter } from "react-router-dom";
 import Repos from '../Repos/Repos';
+import Followers from '../Followers/Followers';
 
 const style = {
   img: {
@@ -81,7 +82,6 @@ class User extends React.Component {
       }
     ];
 
-
     return (
       <div>
         <div>
@@ -111,9 +111,9 @@ class User extends React.Component {
         </div>
         <hr/>
         <div className="user-extra">
-
           <Switch>
             <Route path={`${path}/repos`} component={Repos}/>
+            <Route path={`${path}/followers`} component={Followers}/>
           </Switch>
         </div>
       </div>
