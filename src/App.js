@@ -1,4 +1,3 @@
-import './App.css';
 import React from 'react';
 import { Switch, Route, withRouter } from "react-router-dom";
 
@@ -11,7 +10,7 @@ class App extends React.Component {
     return (
       <main className="container">
         <div className="row">
-          <div className="col-12 align-self-center text-center">
+          <div className="col-12 align-self-center">
             <Search />
             <div className="mt-3">
               <Switch>
