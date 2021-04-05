@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route, Link, withRouter } from "react-router-dom";
 import Repos from '../Repos/Repos';
 import Followers from '../Followers/Followers';
+import Following from '../Following/Following';
 import apiInterceptor from '../../services/apiInterceptor';
 
 const style = {
@@ -114,6 +115,7 @@ class User extends React.Component {
           <Switch>
             <Route path={`${path}/repos`} component={Repos}/>
             <Route path={`${path}/followers`} component={Followers}/>
+            <Route path={`${path}/following`} component={Following}/>
           </Switch>
         </div>
       </div>
