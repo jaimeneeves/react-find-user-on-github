@@ -32,7 +32,7 @@ Para executar esse projeto algumas ferramentas precisam já está instaladas em 
 * `.gitignore`: Arquivos que devem ser ignorados pelo Git. O `node_modules` sempre será recriado
 * `.env`: Arquivo onde configuramos nossas variáveis de ambiente
 * `.editorconfig`: Arquivo que ajuda manter os mesmos estilos de codificação do projeto em IDEs e editores diferentes
-* `generate-react-cli.json`: Arquivo de configuração da lib [generate-react-cli](`https://github.com/arminbro/generate-react-cli`)
+* `generate-react-cli.json`: Arquivo de configuração da lib [generate-react-cli](https://github.com/arminbro/generate-react-cli)
 * `src/index.js`: Este arquivo é o ponto de entrada para o aplicativo. Ele coloca nosso aplicativo na tela
 * `src/components/*`: Todos os componentes do nosso aplicativo
 * `src/services/*`: Todos os arquivos que servem como serviços para a aplicação
@@ -49,6 +49,7 @@ $ cd challenge-front-end-exame
 $ npm install
 
 # Após a instalação das dependências execute esse comando para rodar a aplicação
+# modo desenvolvimento
 $ npm start
 ```
 
