@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route, Link, withRouter } from "react-router-dom";
 import Repos from '../Repos/Repos';
 import Followers from '../Followers/Followers';
+import apiInterceptor from '../../services/apiInterceptor';
 
 const style = {
   img: {
@@ -24,10 +25,9 @@ class User extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`https://api.github.com/users/${this.props.match.params.username}`)
-    .then(response => response.json())
-    .then(user => {
-      this.setState({ user: user });
+    apiInterceptor.get(`users/${this.props.match.params.username}`)
+    .then(response => {
+      this.setState({ user: response.data });
     });
   }
 
