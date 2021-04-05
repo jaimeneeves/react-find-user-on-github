@@ -3,16 +3,8 @@ import { Switch, Route, Link, withRouter } from "react-router-dom";
 import Repos from '../Repos/Repos';
 import Followers from '../Followers/Followers';
 import Following from '../Following/Following';
+import { stylesInlines } from '../../shared/utils';
 import apiInterceptor from '../../services/apiInterceptor';
-
-const style = {
-  img: {
-    width: '100px',
-  },
-  listItems: {
-    width: '100px'
-  }
-};
 
 class User extends React.Component {
 
@@ -38,7 +30,7 @@ class User extends React.Component {
    */
   renderStat(stat) {
     return (
-      <li key={stat.name} className="list-inline-item text-center p-1 mr-4" style={style.listItems}>
+      <li key={stat.name} className="list-inline-item text-center p-1 mr-4" style={stylesInlines.user.listItems}>
         <div to={stat.url} className="text-decoration-none">
           <h2 className="mb-0">{stat.value}</h2>
           <div>{stat.name}</div>
@@ -93,7 +85,7 @@ class User extends React.Component {
                   <img className="mr-3 rounded-circle"
                     src={user.avatar_url}
                     alt={`${user.login} avatar`}
-                    style={style.img}/>
+                    style={stylesInlines.user.img}/>
 
                   <div className="media-body">
                     <h5 className="mt-0">{user.name}</h5>
