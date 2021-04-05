@@ -16,11 +16,22 @@ Para executar esse projeto algumas ferramentas precisam já está instaladas em 
 * Git
 * Node.js
 
+## Estrutura de Arquivos
+
+* `package.json`: Arquivo de configuração para o NPM, contém dependências e metadados do projeto
+* `.gitignore`: Arquivos que devem ser ignorados pelo Git. O `node_modules` sempre será recriado
+* `.env`: Arquivo onde configuramos nossas variáveis de ambiente
+* `.editorconfig`: Arquivo que ajuda manter os mesmos estilos de codificação do projeto em IDEs e editores diferentes
+* `generate-react-cli.json`: Arquivo de configuração da lib [generate-react-cli](`https://github.com/arminbro/generate-react-cli`)
+* `src/index.js`: Este arquivo é o ponto de entrada para o aplicativo. Ele coloca nosso aplicativo na tela
+* `src/components/*`: Todos os componentes do nosso aplicativo
+* `src/services/*`: Todos os arquivos que servem como serviços para a aplicação
+
 ## Passo a passo para rodar a aplicação
 
 ```bash
 
-# Faça o clone
+# Faça o clone do projeto
 $ git clone https://github.com/jaimeneeves/challenge-front-end-exame.git
 $ cd challenge-front-end-exame
 
