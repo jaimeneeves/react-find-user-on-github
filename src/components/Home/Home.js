@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Home = () => (
-  <div></div>
+  <div className="text-center">Seja Bem-vindo!</div>
 );
 
 export default Home;
