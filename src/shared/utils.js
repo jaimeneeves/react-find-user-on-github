@@ -3,5 +3,10 @@ export const stylesInlines = {
     img: {
       width: '46px'
     }
+  },
+  following: {
+    img: {
+      width: '46px'
+    }
   }
 };
