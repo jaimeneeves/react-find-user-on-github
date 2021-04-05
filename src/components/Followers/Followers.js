@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter, Link } from "react-router-dom";
 import { stylesInlines } from '../../shared/utils';
+import apiInterceptor from '../../services/apiInterceptor';
 
 class Followers extends React.Component{
   constructor(props) {
@@ -12,12 +13,9 @@ class Followers extends React.Component{
   }
 
   componentDidMount() {
-    fetch(`https://api.github.com/users/${this.props.match.params.username}/followers?access_token=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`)
-    .then(response => response.json())
-    .then(followers => {
-      this.setState({
-        followers: followers
-      });
+    apiInterceptor.get(`users/${this.props.match.params.username}/followers`)
+    .then(response => {
+      this.setState({ followers: response.data });
     });
   }
 

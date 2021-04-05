@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from "react-router-dom";
+import apiInterceptor from '../../services/apiInterceptor';
 
 class Repos extends React.Component {
   constructor(props) {
@@ -11,15 +12,10 @@ class Repos extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`https://api.github.com/users/${this.props.match.params.username}/repos?access_token=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`)
-    .then(response => response.json())
-    .then(repos => {
-        // How can we use `this` inside a callback without binding it??
-        // Make sure you understand this fundamental difference with arrow functions!!!
-        this.setState({
-          repos: repos
-        });
-      });
+    apiInterceptor.get(`users/${this.props.match.params.username}/repos`)
+    .then(response => {
+      this.setState({ repos: response.data });
+    });
   }
 
   render() {
@@ -45,9 +41,5 @@ class Repos extends React.Component {
     );
   }
 }
-
-Repos.propTypes = {};
-
-Repos.defaultProps = {};
 
 export default withRouter(Repos);
